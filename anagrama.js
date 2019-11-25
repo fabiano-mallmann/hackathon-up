@@ -85,7 +85,7 @@ function onlyText(letter){
     var key = letter.which || letter.keyCode;
 
     // Verifica se é letras de "a" a "z" maiusculas ou minusculas ou se é a tecla espaço
-    if ((key >= 65 && key <= 90) || (key >= 97 && key <= 117) || (key === 32)){
+    if ((key >= 65 && key <= 90) || (key >= 97 && key <= 117) || (key === 32)  || (key === 8)){
         return true;
     }else{
         alert("O campo aceita apenas Letras e Espaço!");
