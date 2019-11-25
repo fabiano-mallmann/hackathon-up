@@ -81,14 +81,12 @@ function searchAnagrams() {
 }
 
 function onlyText(letter){
-    // Transforma a letra em ASCII
-    var key = letter.which || letter.keyCode;
-
-    // Verifica se é letras de "a" a "z" maiusculas ou minusculas ou se é a tecla espaço
-    if ((key >= 65 && key <= 90) || (key >= 97 && key <= 117) || (key === 32)  || (key === 8)){
-        return true;
-    }else{
-        alert("O campo aceita apenas Letras e Espaço!");
-        return false;
-    }
+    // Transforma a letra em ASCII e verifica se é letra, espaço ou backspace, se não, retorna false.
+    var charCode = (letter.charCode) ? letter.charCode : ((letter.keyCode) ? letter.keyCode : ((letter.which) ? letter.which : 0));
+        if (charCode > 31 && (charCode < 65 || charCode > 90) &&
+            (charCode < 97 || charCode > 122)  && (charCode != 32)) {
+            alert("O campo aceita apenas Letras e Espaço!");
+            return false;
+        }
+    return true
 }
