@@ -57,13 +57,13 @@ function searchAnagrams() {
         for(wordLine of txtLine){
 
             // Explode, ordena, junta novamente e limpa espaços 
-            txtWord = wordLine.split('').sort().join("").replace(/ /g, "");
+            txtWord = wordLine.toUpperCase().split('').sort().join("").replace(/ /g, "");
             userWord = word.split('').sort().join("").replace(/ /g , "");
 
             // Verifica se as palavras são iguais
             if(txtWord === userWord){
                 // Se forem iguais, ele adiciona a palavra no Array de exibição
-                list.push(wordLine);
+                list.push(wordLine.toUpperCase());
             }
         }
 
